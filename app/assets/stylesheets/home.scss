@@ -61,19 +61,24 @@
 
 .home {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 160px;
   margin-bottom: 100px;
 
   h1 {
+    font-family: 'Poppins', sans-serif;
     font-size: 62px;
     color: white;
     font-weight: lighter;
+    color: #d8eaf9;
   }
   h3 {
     color: white;
-    font-weight: 300;
+    font-weight: 100;
     font-size: 28px;
-    font-family: 'Open Sans';
+    font-family: 'Open Sans', sans-serif;
+    margin-top: -7px;
+    letter-spacing: 1px;
+
   }
   .description {
     margin-top: 9%;
@@ -235,12 +240,12 @@ font-weight: 700;
 #footer {
   padding-bottom: 30px;
   h1 {
-    color: #FAF2CB;
+    color: #9CC4E4;
     font-weight: 700;
   }
   li {
     list-style-type: none;
-    color: #FAF2CB;
+    color: #f9fafb;
     margin: 20px 0px;
     font-size: 16px;
   }
@@ -360,4 +365,9 @@ font-weight: 700;
     background: transparent;
     border: none;
   }
+}
+
+
+.bg-orange{
+  background-color: #003760;
 }

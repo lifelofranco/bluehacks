@@ -2,9 +2,11 @@
 
 
 .nav {
-  height: 100%;
+  height: 8%;
   padding-top: 13px;
-  @include background(linear-gradient(#333333, rgba(255,255,255,0)) left repeat);
+  //@include background(linear-gradient(#333333, rgba(255,255,255,0)) left repeat);
+  position:fixed;
+  width:100%;
 }
 
 .logo {
@@ -29,6 +31,7 @@ header {
     margin: 0;
   }
 
+
   button {
     margin-top: 5px;
   }
@@ -39,6 +42,21 @@ header {
     li {
       margin-left: 30px;
       font-family: $base-font;
+    }
+
+    li:after{
+      content: '';
+    	display: block;
+    	margin: auto;
+    	height: 3px;
+    	width: 0px;
+    	background: transparent;
+    	transition: width .5s ease, background-color .5s ease;
+    }
+
+    li:hover:after {
+    	width: 100%;
+    	background: #9CC4E4;
     }
   }
 }
