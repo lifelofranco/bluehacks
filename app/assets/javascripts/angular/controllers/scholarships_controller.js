@@ -1,10 +1,16 @@
-app.controller('ScholarshipsController', ['$scope',
-  function($scope) {
+app.controller('ScholarshipsController', ['$scope', '$stateParams', 'ScholarshipService',
+  function($scope, $stateParams, ScholarshipService) {
     this.showNav = false;
     $scope.$parent.title = 'Search Scholarships';
     $scope.showTopics = function() {
       this.topics = !this.topics;
     };
+
+    ScholarshipService.getOne($stateParams.id)
+    .then(function(data) {
+      $scope.scholar = data;
+      console.log(data);
+    })
 
     $scope.toggle = function() {
       this.showNav= !this.showNav;

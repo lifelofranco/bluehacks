@@ -1,8 +1,14 @@
 app.controller('SubNavbarController',
-  function($scope, $state, DemoService) {
+  function($scope, $state, DemoService, ScholarshipService) {
 
 
-    $scope.scholarships = DemoService.scholarships();
+        ScholarshipService.getScholarships()
+        .then(function(data) {
+          $scope.scholarships = data;
+          console.log($scope.scholarships);
+
+        })
+    //$scope.scholarships = DemoService.scholarships();
 
       $scope.tab = $state.current.name;
 

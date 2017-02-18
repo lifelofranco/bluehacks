@@ -1,3 +1,84 @@
 .container.add-margin-x
   .applyContainer
     .applyWithin
+      .row
+        .col-sm-3
+          .image
+            img.event-img ng-src="{{scholar.logo}}"
+        .col-sm-8
+          .row
+            .col-sm-12
+              h2
+                | {{scholar.institution}}
+          .row
+            .col-sm-12
+              p.description
+                | {{scholar.description}}
+      .row
+        .col-sm-12.col-sm-offset-1
+          .row
+            h3
+              | Requirements
+            .col-sm-6
+              ul.reqs
+                li
+                  a
+                    | Application Form
+                li
+                  a
+                    | Personal Essay
+                li
+                  a
+                    | Acknowledgement Slip
+                li
+                  a
+                    | 1x1 Picture
+                li
+                  a
+                    | Scholarship Form
+            .col-sm-2
+              ul.reqs.upload
+                li.uploadContainer
+                  a.absolute
+                    | upload
+                  =image_tag "notuploaded.png", :class => "x-btn"
+                li
+                  a.absolute
+                    | upload
+                  = image_tag "notuploaded.png", :class => "x-btn"
+                li
+                  a.absolute
+                    | upload
+                  = image_tag "notuploaded.png", :class => "x-btn"
+                li
+                  a.absolute
+                    | upload
+                  = image_tag "notuploaded.png", :class => "x-btn"
+                li
+                  a.absolute
+                    | upload
+                  = image_tag "notuploaded.png", :class => "x-btn"
+          .row
+            h3
+              | Files
+            .col-sm-6
+              ul.reqs
+                li
+                  a
+                    | Application Form
+                li
+                  a
+                    | Personal Essay
+                li
+                  a
+                    | Acknowledgement Slip
+                li
+                  a
+                    | Scholarship Form
+
+          .row
+            .col-sm-10.applyButton
+              button
+                | Save and Exit
+              button
+                | Apply

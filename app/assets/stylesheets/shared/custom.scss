@@ -12,7 +12,14 @@ $base-font: 'Avenir', sans-serif;
 
 
 
-
+@mixin multiLineEllipsis($lineHeight, $lineCount){
+    overflow: hidden;
+    position: relative;
+    line-height: $lineHeight;
+    max-height: $lineHeight * $lineCount;
+    text-align: justify;
+    padding-right: 15px;
+}
 
 $break-monitor: 1200px;
 $break-laptop: 992px;

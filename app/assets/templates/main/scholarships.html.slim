@@ -17,16 +17,16 @@
                 li ng-repeat="filter in topic_filters" ng-click="topicFilter(filter.value)"
                   | {{filter.label}}
       .col-sm-9
-        .card ng-repeat="card in scholarships | filter: {title: name}"
-          a ui-sref="nav.show({id: card._id})"
+        .card ng-repeat="card in scholarships | filter: {name: name}"
+          a ui-sref="sidebar.subnavbar.show({id: card._id})"
             .event.b
               .image
-                img.event-img ng-src="{{card.image}}"
+                img.event-img ng-src="{{card.logo}}"
               .details
                 h5.ellipsis
-                  | {{card.title}}
-                p.location
+                  | {{card.name}}
+                p.desc
                   | {{card.description}}
                 p
-                button.apply ui-sref=".apply"
+                button.apply ui-sref=".sidebar.subnavbar.apply"
                   |  Apply

@@ -3,6 +3,13 @@
   padding:0 20px 0 20px;
   float:left;
 
+  .image {
+    margin-top: 20px;
+    img {
+      width: 165px;
+    }
+  }
+
   .applyWithin{
     @include box-shadow(0 1px 5px -2px rgba(0,0,0,0.52));
     border-top-left-radius: 0;
@@ -15,6 +22,84 @@
     background: #fff;
     display: inline-block;
     text-align: center;
+  }
+  h2{
+    text-align:left;
+    color: #003366;
+  }
+
+  .description{
+    text-align:justify;
+    color: black;
+  }
+
+  h3{
+    color:black;
+    text-align:left;
+  }
+
+  .reqs{
+    list-style: none;
+    text-align:left;
+    font-size: 16px;
+  }
+
+  .reqs li{
+    margin: 10px 0;
+  }
+
+  .reqs a{
+    color: #999;
+    text-decoration:none;
+  }
+  .upload a{
+    color: #003760!important;
+    font-size:12px;
+  }
+
+  .uploadContainer{
+    margin:0;
+  }
+
+  // .left{
+  //   float:left;
+  //   width:70%;
+  //   overflow:hidden;
+  // }
+  // .right{
+  //   float:right;
+  //   width:30%;
+  //   overflow: hidden;
+  // }
+
+  .x-btn {
+    position: relative;
+    left: 45px;
+    bottom: 4px;
+  }
+
+  .reqs a:hover{
+    color: #003760;
+    cursor: pointer;
+  }
+
+  .applyButton{
+    text-align: right;
+  }
+
+  button{
+    background:#FFF;
+    border: 1px solid #999;
+    width:23%;
+    color: #053563;
+    padding: 10px;
+    margin: 10px 10px;
+    text-align: center;
+    color: #003760;
+  }
+
+  button:hover{
+    color:#999;
   }
 }
 
@@ -86,11 +171,13 @@
     font-weight: 300;
     font-family: $reg-font;
   }
-  .location {
+  .desc {
     margin-top: 10px;
     font-family: $reg-font;
     font-weight: 300;
     color:#999;
+    @include multiLineEllipsis($lineHeight: 1.6em, $lineCount: 4);
+
   }
   .price {
     background: $gray;
@@ -126,7 +213,7 @@
   display: inline-block;
 }
 .accepted {
-  color: #CAE3AE;
+  color: green;
 }
 
 .apply{
