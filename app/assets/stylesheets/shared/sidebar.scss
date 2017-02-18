@@ -1,6 +1,6 @@
 
 .sidebar {
-  background: #273142;
+  background: #003366;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -24,15 +24,7 @@ margin-right: -15px;
 .logo {
   margin-top: 45px;
 }
-.square {
-  /* Base: */
-background-image: linear-gradient(-1deg, #1991EB 2%, #2DA1F8 98%);
-border-radius: 4px;
-width: 45px;
-height: 45px;
-padding: 15px;
-margin: auto;
-}
+
 .side-menu {
   margin-top: 50px;
   padding: 0;
@@ -73,4 +65,15 @@ margin: auto;
   display: block;
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.profilePicture{
+  width:150px;
+  height:150px;
+  border-radius:100%;
+}
+
+h3{
+  color:#FFF;
+  text-align:center;
 }

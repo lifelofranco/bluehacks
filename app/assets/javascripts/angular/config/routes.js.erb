@@ -43,6 +43,15 @@ app.config(
         }
       }
     })
+    .state('sidebar.subnavbar.apply', {
+      url: '/apply',
+      views: {
+        'subcontent': {
+          templateUrl: 'main/apply.html'
+        }
+      }
+    })
+
 
   $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode({

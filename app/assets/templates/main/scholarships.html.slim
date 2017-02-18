@@ -1,14 +1,37 @@
 .container.add-margin-x
-  .card ng-repeat="card in scholarships | filter: {title: name}"
-    a ui-sref="nav.show({id: card._id})"
-      .event
-        .image
-          img.event-img ng-src="{{card.image}}"
-        .details
-          h5.ellipsis
-            | {{card.title}}
-          p.location
-            | {{card.description}}
-          p
-          button.apply
-            |  Apply
+  .row
+    .col-sm-2
+      .filter
+        input type="text"
+        h5
+          | Places
+        ul
+          li
+            a Manila
+          lis
+            a Cebu
+          li 
+            a Zamboanga
+          li 
+            a Davao
+        h5
+          | Type
+        ul
+          li 
+            a Merit
+          li 
+            a Financial 
+    .col-sm-10
+      .card ng-repeat="card in scholarships | filter: {title: name}"
+        a ui-sref="nav.show({id: card._id})"
+          .event.b
+            .image
+              img.event-img ng-src="{{card.image}}"
+            .details
+              h5.ellipsis
+                | {{card.title}}
+              p.location
+                | {{card.description}}
+              p
+              button.apply ui-sref=".apply"
+                |  Apply

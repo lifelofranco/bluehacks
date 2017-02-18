@@ -1,8 +1,28 @@
+.applyContainer{
+  width:90%;
+  padding:0 20px 0 20px;
+  float:left;
+
+  .applyWithin{
+    @include box-shadow(0 1px 5px -2px rgba(0,0,0,0.52));
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    height: 700px;
+    width: 100%;
+    position: relative;
+    background: #fff;
+    display: inline-block;
+    text-align: center;
+  }
+}
+
 .card {
   width: 35%;
   padding: 0 20px 0 20px;
   float: left;
-  height: 350px;
+  height: 400px;
 
   .image {
     width: 100%;
@@ -22,6 +42,9 @@
     background: #fff;
     display: inline-block;
     text-align: center;
+  }
+  .b{
+    height:350px!important;
   }
   .event-img {
     max-width: 100%;
@@ -107,4 +130,23 @@
 
 .apply:hover{
   color:#999;
+}
+
+
+.filter ul{
+  list-style: none;
+}
+
+.filter a{
+  color:#333;
+}
+
+h5{
+  color: #003760;
+}
+
+.filter a:hover{
+  color: #003760;
+  text-decoration:none;
+  cursor:pointer;
 }
