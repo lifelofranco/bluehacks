@@ -36,25 +36,28 @@
                 li
                   a
                     | Scholarship Form
-            .col-sm-6
+            .col-sm-2
               ul.reqs.upload
-                li
-                  a
+                li.uploadContainer
+                  a.absolute
                     | upload
-                  .uploaded
-                    = image_tag "notuploaded.png"
+                  =image_tag "notuploaded.png", :class => "x-btn"
                 li 
-                  a
+                  a.absolute
                     | upload
+                  = image_tag "notuploaded.png", :class => "x-btn"
                 li
-                  a
+                  a.absolute
                     | upload
+                  = image_tag "notuploaded.png", :class => "x-btn"                
                 li
-                  a
+                  a.absolute
                     | upload
+                  = image_tag "notuploaded.png", :class => "x-btn"      
                 li
-                  a
+                  a.absolute
                     | upload
+                  = image_tag "notuploaded.png", :class => "x-btn"                
           .row
             h3
               | Files
