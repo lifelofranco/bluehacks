@@ -9,3 +9,16 @@ var app = angular.module('app', [
   'app.controllers',
   'app.services'
 ]);
+
+app.run(['$rootScope', '$state', 'AuthService', '$location', 'ngProgressFactory', function($rootScope, $state, AuthService, $location, ngProgressFactory) {
+    AuthService.currentUser();
+
+    $rootScope.progressbar = ngProgressFactory.createInstance();
+   $rootScope.$on("$stateChangeStart", function () {
+       $rootScope.progressbar.start();
+   });
+
+   $rootScope.$on("$stateChangeSuccess", function () {
+       $rootScope.progressbar.complete();
+   });
+}]);

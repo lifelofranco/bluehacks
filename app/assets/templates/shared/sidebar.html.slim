@@ -3,10 +3,10 @@
     .logo
       = image_tag "zar.jpg", :class => "profilePicture"
     h3
-      | Puggy Louise
+      | {{user.firstName}} {{user.lastName}}
     ul.side-menu
       li.menu
-        | 
+        |
       li ui-sref-active="active"
         a ui-sref=".subnavbar.dashboard"  My Applications
       li ui-sref-active="active"
