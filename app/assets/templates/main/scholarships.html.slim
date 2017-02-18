@@ -17,7 +17,7 @@
                 li ng-repeat="filter in topic_filters" ng-click="topicFilter(filter.value)"
                   | {{filter.label}}
       .col-sm-9
-        .card ng-repeat="card in scholarships | filter: {title: name}"
+        .card ng-repeat="card in scholarships | filter: {name: name}"
           a ui-sref="sidebar.subnavbar.show({id: card._id})"
             .event.b
               .image
