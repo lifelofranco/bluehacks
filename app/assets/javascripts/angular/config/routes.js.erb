@@ -16,11 +16,30 @@ app.config(
       abstract: true,
       templateUrl: 'shared/sidebar.html'
     })
-    .state('sidebar.dashboard', {
+    .state('sidebar.subnavbar', {
+        abstract: true,
+        views: {
+          'content': {
+            templateUrl: 'shared/subnavbar.html',
+            controller: 'SubNavbarController'
+          }
+        }
+      })
+    .state('sidebar.subnavbar.dashboard', {
       url: '/dashboard',
       views: {
-        'content': {
+        'subcontent': {
           templateUrl: 'main/dashboard.html',
+          controller: 'DashboardController'
+        }
+      }
+    })
+    .state('sidebar.subnavbar.scholarships', {
+      url: '/scholarships',
+      views: {
+        'subcontent': {
+          templateUrl: 'main/scholarships.html',
+          controller: 'DashboardController'
         }
       }
     })

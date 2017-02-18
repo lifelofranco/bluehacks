@@ -1,15 +1,15 @@
 
-.bg-blue {
+.sidebar {
   background: #273142;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  display: block;
+  overflow-x: hidden;
+  overflow-y: auto;
   max-width: 250px;
-      position: fixed;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      z-index: 3;
-      display: block;
-      overflow-x: hidden;
-      overflow-y: auto;
 }
 .wrap {
   margin-left: -15px;
@@ -62,7 +62,9 @@ margin: auto;
 }
 
 .bg-dark {
-  background: #EFF3F6;
+  //background: #EFF3F6;
+  margin-left: 19.5%;
+  width: 80.5%;
   position: fixed;
   top: 0;
   bottom: 0;

@@ -1,47 +1,39 @@
 app.service('DemoService', ["$q", "$http",
   function($q, $http){
 
-    this.class = function() {
+    this.scholarships = function() {
        return [
         {
-          "title": "Social Media Marketing",
-          "image": "https://dl.dropboxusercontent.com/s/0go6tuhwl9whnue/class.png?dl=0",
-          "price": 400,
-          "date": "Wed, Nov. 2, 1:00 pm",
-          "location": "Ateneo de Manila University",
-          "tags": [
-            "entrepreneur", "business"
-          ]
+          "title": "Ateneo de Manila University",
+          "name": "Merit Scholarship",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "image": "https://dl.dropboxusercontent.com/s/bjijrutzlmd4khz/ateneo_seal.png?dl=0",
+          "status": "Accepted",
+          "submitted": "Wed, Feb. 14, 1:00 pm",
         },
         {
-          "title": "Social Media Marketing",
-          "image": "https://dl.dropboxusercontent.com/s/0go6tuhwl9whnue/class.png?dl=0",
-          "price": 400,
-          "date": "Wed, Nov. 2, 1:00 pm",
-          "location": "Ateneo de Manila University",
-          "tags": [
-            "entrepreneur", "business"
-          ]
+          "title": "Ateneo de Manila University",
+          "name": "Merit Scholarship",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          "image": "https://dl.dropboxusercontent.com/s/bjijrutzlmd4khz/ateneo_seal.png?dl=0",
+          "status": "Accepted",
+          "submitted": "Wed, Feb. 14, 1:00 pm",
         },
         {
-          "title": "Social Media Marketing",
-          "image": "https://dl.dropboxusercontent.com/s/0go6tuhwl9whnue/class.png?dl=0",
-          "price": 400,
-          "date": "Wed, Nov. 2, 1:00 pm",
-          "location": "Ateneo de Manila University",
-          "tags": [
-            "entrepreneur", "business"
-          ]
+          "title": "Ateneo de Manila University",
+          "name": "Merit Scholarship",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+          "image": "https://dl.dropboxusercontent.com/s/bjijrutzlmd4khz/ateneo_seal.png?dl=0",
+          "status": "Accepted",
+          "submitted": "Wed, Feb. 14, 1:00 pm",
         },
         {
-          "title": "Social Media Marketing",
-          "image": "https://dl.dropboxusercontent.com/s/0go6tuhwl9whnue/class.png?dl=0",
-          "price": 400,
-          "date": "Wed, Nov. 2, 1:00 pm",
-          "location": "Ateneo de Manila University",
-          "tags": [
-            "entrepreneur", "business"
-          ]
+          "title": "Ateneo de Manila University",
+          "name": "Merit Scholarship",
+          "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "image": "https://dl.dropboxusercontent.com/s/bjijrutzlmd4khz/ateneo_seal.png?dl=0",
+          "status": "Accepted",
+          "submitted": "Wed, Feb. 14, 1:00 pm",
         }
       ];
     };

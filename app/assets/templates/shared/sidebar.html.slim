@@ -1,4 +1,4 @@
-.col-sm-3.bg-blue.no-padding
+.col-sm-3.sidebar.no-padding
   .side-wrap
     .logo
       .square
@@ -8,11 +8,11 @@
       li.menu
         | Menu
       li ui-sref-active="active"
-        a ui-sref=".navbar.home"  Dashboard
+        a ui-sref=".subnavbar.dashboard"  Dashboard
       li ui-sref-active="active"
-        a ui-sref=".navbar.analytics"  Analytics
+        a ui-sref=".subnavbar.scholarships"  Scholarships
       li ui-sref-active="active"
-        a ui-sref=".navbar.settings"  Settings
-.col-sm-9.col-sm-offset-3.bg-dark
+        a ui-sref=".subnavbar.settings"  Settings
+.col-sm-10.col-sm-offset-2.bg-dark
   .wrap
     div ui-view="content"

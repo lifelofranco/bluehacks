@@ -1,0 +1,5 @@
+.sub-navbar
+  span.options ng-repeat="option in navbarOptions" ui-sref-active="activenav" ui-sref=".{{option.link}}" ng-click="$event.stopPropagation()"
+    | {{option.label}}
+.app-content
+  div ui-view="subcontent"
