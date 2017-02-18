@@ -3,17 +3,17 @@
     .applyWithin
       .row
         .col-sm-3
-          | placeholder image
+          .image
+            img.event-img ng-src="{{scholar.logo}}"
         .col-sm-8
           .row
             .col-sm-12
               h2
-                | Ateneo de Manila University
+                | {{scholar.institution}}
           .row
             .col-sm-12
-              p.description 
-                | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                
+              p.description
+                | {{scholar.description}}
       .row
         .col-sm-12.col-sm-offset-1
           .row
@@ -24,7 +24,7 @@
                 li
                   a
                     | Application Form
-                li 
+                li
                   a
                     | Personal Essay
                 li
@@ -42,22 +42,22 @@
                   a.absolute
                     | upload
                   =image_tag "notuploaded.png", :class => "x-btn"
-                li 
+                li
                   a.absolute
                     | upload
                   = image_tag "notuploaded.png", :class => "x-btn"
                 li
                   a.absolute
                     | upload
-                  = image_tag "notuploaded.png", :class => "x-btn"                
+                  = image_tag "notuploaded.png", :class => "x-btn"
                 li
                   a.absolute
                     | upload
-                  = image_tag "notuploaded.png", :class => "x-btn"      
+                  = image_tag "notuploaded.png", :class => "x-btn"
                 li
                   a.absolute
                     | upload
-                  = image_tag "notuploaded.png", :class => "x-btn"                
+                  = image_tag "notuploaded.png", :class => "x-btn"
           .row
             h3
               | Files
@@ -66,7 +66,7 @@
                 li
                   a
                     | Application Form
-                li 
+                li
                   a
                     | Personal Essay
                 li
@@ -75,7 +75,7 @@
                 li
                   a
                     | Scholarship Form
-                    
+
           .row
             .col-sm-10.applyButton
               button

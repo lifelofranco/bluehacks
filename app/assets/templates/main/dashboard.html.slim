@@ -1,15 +1,15 @@
 .container.add-margin-x
-  .card ng-repeat="card in scholarships | filter: {title: name}"
-    a ui-sref="nav.show({id: card._id})"
-      .event
-        .image
-          img.event-img ng-src="{{card.image}}"
-        .details
-          h5.ellipsis
-            | {{card.title}}
-          p.location
-            | {{card.description}}
-          p.status
-            | Status:
-          span.accepted
-            |  {{card.status}}
+.card ng-repeat="card in scholarships | filter: {title: name}"
+  a ui-sref="sidebar.subnavbar.show({id: card._id})"
+    .event.b
+      .image
+        img.event-img ng-src="{{card.logo}}"
+      .details
+        h5.ellipsis
+          | {{card.name}}
+        p.desc
+          | {{card.description}}
+        p.status
+          | Status:
+        span.accepted
+          |  Accepted
