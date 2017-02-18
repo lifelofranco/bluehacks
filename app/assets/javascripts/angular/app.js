@@ -5,6 +5,7 @@ var app = angular.module('app', [
   'templates',
   'ngCookies',
   'ngProgress',
+  'angular-carousel',
   'app.controllers',
   'app.services'
 ]);

@@ -9,6 +9,7 @@
 //= require angular-rails-templates
 //= require angular-cookies.min
 
+
 //= require angular-ui-router
 //= require angular/app
 //= require angular/config/routes
@@ -18,6 +19,8 @@
 // Imported javascripts
 //= require ngDialog.min
 //= require ngProgress
+//= require angular-touch
+//= require angular-carousel.min
 //= require_tree ../templates
 
 //= require_tree .

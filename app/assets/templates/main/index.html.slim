@@ -1,13 +1,14 @@
 section.background#index
   div ng-include="'shared/nav.html'"
 
-  .container.tagline
+  .container.tagline.home
     h1
       | Find a
-    h1
-      | scholarship
-    h1
-      | right for you
+      |  scholarship
+      |  right for you
+    h3
+      | We believe everyone has the right to high quality education.
+
 
 section.bg-gray#featured_classes_section
   .container
@@ -41,6 +42,18 @@ section.mentees#mentees
               | Book your chosen mentor or class.
       .col-md-5.col-md-offset-1.center.row-space-top-6
         = image_tag "student.png", :class => "mentee"
+
+section.testimonials
+  .container
+    .row
+      .col-md-3
+        
+    h1 hello
+    ul.image rn-carousel="" rn-carousel-auto-slide=""
+      li slide #1
+      li slide #2
+      li slide #3
+
 
 section.bg-gray#what
   .container

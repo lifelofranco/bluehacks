@@ -12,6 +12,18 @@ app.config(
       templateUrl: 'shared/nav.html',
       controller: 'NavController'
     })
+    .state('sidebar', {
+      abstract: true,
+      templateUrl: 'shared/sidebar.html'
+    })
+    .state('sidebar.dashboard', {
+      url: '/dashboard',
+      views: {
+        'content': {
+          templateUrl: 'main/dashboard.html',
+        }
+      }
+    })
 
   $urlRouterProvider.otherwise('/');
   $locationProvider.html5Mode({

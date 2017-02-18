@@ -6,4 +6,6 @@ app.controller('IndexController', ['$scope',
       this.showNav= !this.showNav;
     }
   }
+
+  
 ]);

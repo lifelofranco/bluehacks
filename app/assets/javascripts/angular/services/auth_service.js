@@ -3,7 +3,7 @@ app.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
 
   var setUser = function(data) {
     $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-    $http.post('https://lrn-api.herokuapp.com/api/v1/users/login', $.param(data))
+    $http.post('https://playtest-api.herokuapp.com/api/v1/users/login', $.param(data))
     .success(function(data){
       $cookies.put('token', data.token);
       $window.location.reload();
@@ -18,7 +18,7 @@ app.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
       var d = $q.defer();
       $http({
         method: 'POST',
-        url: 'https://lrn-api.herokuapp.com/api/v1/users/register',
+        url: 'https://playtest-api.herokuapp.com/api/v1/users/register',
         data: data
       }).success(function(success) {
         console.log(success);
@@ -36,7 +36,7 @@ app.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
 
   this.login = function(data) {
       $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
-      $http.post('https://lrn-api.herokuapp.com/api/v1/users/login', $.param(data))
+      $http.post('https://playtest-api.herokuapp.com/api/v1/users/login', $.param(data))
       .success(function(data){
         $cookies.put('token', data.token);
 
@@ -64,7 +64,7 @@ app.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
 
       $http({
         method: 'GET',
-        url: 'https://lrn-api.herokuapp.com/api/v1/users/'+ user_id
+        url: 'https://playtest-api.herokuapp.com/api/v1/users/'+ user_id
       }).success(function(data){
         d.resolve(data);
       });
