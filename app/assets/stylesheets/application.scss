@@ -1,0 +1,12 @@
+@import 'bourbon';
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'shared/custom';
+@import 'shared/main';
+@import 'shared/nav';
+@import 'home';
+
+
+//Imported CSS
+@import 'ngDialog.min';
+@import 'ngDialog-theme-default';

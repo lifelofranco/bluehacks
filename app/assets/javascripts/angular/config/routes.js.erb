@@ -1,0 +1,25 @@
+app.config(
+  ['$stateProvider', '$urlRouterProvider', '$locationProvider',
+    function($stateProvider, $urlRouterProvider, $locationProvider) {
+  $stateProvider
+    .state('index', {
+      url: '/',
+      templateUrl: 'main/index.html',
+      controller: 'IndexController'
+    })
+    .state('nav', {
+      abstract: true,
+      templateUrl: 'shared/nav.html',
+      controller: 'NavController'
+    })
+
+  $urlRouterProvider.otherwise('/');
+  $locationProvider.html5Mode({
+  enabled: true,
+  requireBase: false
+});
+}]).run
+    ['$rootScope', '$state',
+    function($rootScope, $state) {
+    $rootScope.$state = $state;
+}];

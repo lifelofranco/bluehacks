@@ -1,0 +1,36 @@
+$white: white;
+$blue: #153C66;
+$yellow: #F4D35E;
+$orange: #F1573B;
+$gray: #F7F7F7;
+$darker-gray: #EFF2F5;
+$white: white;
+$green: #3EC59D;
+$reg-font: 'Open Sans', sans-serif;
+
+
+
+
+$break-monitor: 1200px;
+$break-laptop: 992px;
+$break-tablet: 768px;
+$break-mobile: 480px;
+$break-nano: 320px;
+
+@mixin breakpoint($width) {
+  @if $width == monitor {
+    @media (min-width: $break-monitor) { @content; }
+  }
+  @else if $width == laptop {
+    @media (min-width: $break-laptop) { @content; }
+  }
+  @else if $width == tablet {
+    @media (min-width: $break-tablet) { @content; }
+  }
+  @else if $width == mobile {
+    @media (min-width: $break-mobile) { @content; }
+  }
+  @else if $width == nano {
+    @media (min-width: $break-nano)  { @content; }
+  }
+}

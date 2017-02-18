@@ -1,0 +1,79 @@
+section.background#index
+  div ng-include="'shared/nav.html'"
+
+  .container.tagline
+    h1
+      | Find a
+    h1
+      | scholarship
+    h1
+      | right for you
+
+section.bg-gray#featured_classes_section
+  .container
+    .row
+        h2 Featured Classes
+        .featured_classes.row
+          .featured_class_container.col-md-3.col-sm-4 ng-repeat="featuredClass in featuredClasses"
+            .featured_class
+              img.class_img ng-src="{{featuredClass.image}}"
+              .class_details
+                p.class_title.ellipsis
+                  | {{featuredClass.title}}
+
+section.mentees#mentees
+  .container
+    .row
+      .col-md-6.padding
+        h2 For Mentees
+        .instructions
+          .steps
+            h2 1
+            p
+              | Search your desired topic and browse through a wide array of mentors/classes.
+          .steps
+            h2 2
+            p.row-space-top-4
+              | Message your mentor regarding your specific needs
+          .steps
+            h2 3
+            p.book
+              | Book your chosen mentor or class.
+      .col-md-5.col-md-offset-1.center.row-space-top-6
+        = image_tag "student.png", :class => "mentee"
+
+section.bg-gray#what
+  .container
+    .features.col-md-4.col-sm-12
+      =image_tag "star.png"
+      h3 Indulge your curiosity
+      p Browse through a wide variety of classes, from code to design to marketing
+    .features.col-md-4.col-sm-12
+      =image_tag "users.png"
+      h3 Learn from great mentors
+      p Be guided and get personalized feedback at every stage of your learning
+    .features.col-md-4.col-sm-12
+      =image_tag "customizable.png"
+      h3 Get better at what you love
+      p Embark on the road to mastery from the convenience of your computer
+
+section#footer.bg-orange
+  .container
+    .row.row-space-top-6
+      .col-md-6.center
+        =image_tag "lrn-img.png", :class => "lrn-img"
+      .col-md-6
+        h1.uppercase Get in Touch
+        ul
+          li
+            i.fa.fa-envelope-o aria-hidden="true"
+            | lrnrightnow@gmail.com
+          li
+            i.fa.fa-facebook-square aria-hidden="true"
+            | facebook.com/lrnrightnow
+          li
+            i.fa.fa-phone aria-hidden="true"
+            | +63 915 458 7029
+          li
+            i.fa.fa-map-marker aria-hidden="true"
+            | SOM 402, Ateneo de Manila University
