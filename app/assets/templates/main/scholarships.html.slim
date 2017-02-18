@@ -1,37 +1,32 @@
-.container.add-margin-x
-  .row
-    .col-sm-2
-      .filter
-        input type="text"
-        h5
-          | Places
-        ul
-          li
-            a Manila
-          lis
-            a Cebu
-          li 
-            a Zamboanga
-          li 
-            a Davao
-        h5
-          | Type
-        ul
-          li 
-            a Merit
-          li 
-            a Financial 
-    .col-sm-10
-      .card ng-repeat="card in scholarships | filter: {title: name}"
-        a ui-sref="nav.show({id: card._id})"
-          .event.b
-            .image
-              img.event-img ng-src="{{card.image}}"
-            .details
-              h5.ellipsis
-                | {{card.title}}
-              p.location
-                | {{card.description}}
-              p
-              button.apply ui-sref=".apply"
-                |  Apply
+#scholarships
+  .container.add-margin-x
+    .row
+      .col-sm-3
+        .filter
+          .form-group.search
+            input.form-control.search-bar type="search" placeholder="Search Classes" ng-model="name"
+            i.line-icon.search-icon
+              | &#xe01f;
+          .add-padding-left
+            .filterBy
+              div ng-click="showTopics()"
+                h4 Locations
+                i.line-icon.pull-right
+                  | &#xe62a;
+              ul.no-padding ng-show="topics"
+                li ng-repeat="filter in topic_filters" ng-click="topicFilter(filter.value)"
+                  | {{filter.label}}
+      .col-sm-9
+        .card ng-repeat="card in scholarships | filter: {title: name}"
+          a ui-sref="nav.show({id: card._id})"
+            .event.b
+              .image
+                img.event-img ng-src="{{card.image}}"
+              .details
+                h5.ellipsis
+                  | {{card.title}}
+                p.location
+                  | {{card.description}}
+                p
+                button.apply ui-sref=".apply"
+                  |  Apply
