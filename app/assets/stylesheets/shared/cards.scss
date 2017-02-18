@@ -1,5 +1,5 @@
 .applyContainer{
-  width:90%;
+  width:80%;
   padding:0 20px 0 20px;
   float:left;
 
@@ -15,6 +15,73 @@
     background: #fff;
     display: inline-block;
     text-align: center;
+  }
+
+  h2{
+    text-align:left;
+    color: #003366;
+  }
+
+  .description{
+    text-align:justify;
+    color: #cccccc;
+  }
+
+  h3{
+    color:#999999;
+    text-align:left;
+  }
+
+  .reqs{
+    list-style: none;
+    text-align:left;
+    font-size: 16px;
+  }
+
+  .reqs li{
+    margin: 10px 0;
+  }
+
+  .reqs a{
+    color: #999;
+    text-decoration:none;
+  }
+  .upload a{
+    color: #003760!important;
+    font-size:12px;
+    vertical-align: top;
+  }
+
+  .upload img{
+    vertical-align: top;
+  }
+
+  .upload li{
+    display: inline-block;
+  }
+
+  .reqs a:hover{
+    color: #003760;
+    cursor: pointer;
+  }
+
+  .applyButton{
+    text-align: right;
+  }
+
+  button{
+    background:#FFF;
+    border: 1px solid #999;
+    width:23%;
+    color: #053563;
+    padding: 10px;
+    margin: 10px 10px;
+    text-align: center;
+    color: #003760;
+  }
+
+  button:hover{
+    color:#999;
   }
 }
 
