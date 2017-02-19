@@ -52,33 +52,41 @@
                   label.custom-file-upload for="file-upload2"
                     | upload
                   input#file-upload2 onchange="angular.element(this).scope().setFile(this)" type="file" /
-                  div#wrong2.wrong ng-show="fileLink[1] == ''"
-                    a.fileuploaded href="http://localhost:8180/forms/{{fileLink[1]}}"
+                  div#wrong2 ng-show="fileLink[1] !== ''"
+                    a href="https://playtest-api.herokuapp.com/forms/{{fileLink[1]}}"
                       | {{fileLink[1]}}
+                      =image_tag "uploaded.png", :class => "check-btn"
+                  div#wrong2 ng-show="fileLink[1] == ''"
                     = image_tag "notuploaded.png", :class => "x-btn"
                 li
                   label.custom-file-upload for="file-upload3"
                     | upload
                   input#file-upload3 onchange="angular.element(this).scope().setFile(this)" type="file" /
-                  div#wrong3.wrong ng-show="fileLink[2] == ''"
-                    a.fileuploaded href="http://localhost:8180/forms/{{fileLink[2]}}"
+                  div#wrong3 ng-show="fileLink[2] !== ''"
+                    a href="https://playtest-api.herokuapp.com/forms/{{fileLink[2]}}"
                       | {{fileLink[2]}}
+                      =image_tag "uploaded.png", :class => "check-btn"
+                  div#wrong3 ng-show="fileLink[2] == ''"
                     = image_tag "notuploaded.png", :class => "x-btn"
                 li
                   label.custom-file-upload for="file-upload4"
                     | upload
                   input#file-upload4 onchange="angular.element(this).scope().setFile(this)" type="file" /
-                  div#wrong4.wrong ng-show="fileLink[3] == ''"
-                    a href="http://localhost:8180/forms/{{fileLink[3]}}"
+                  div#wrong4 ng-show="fileLink[3] !== ''"
+                    a href="https://playtest-api.herokuapp.com/forms/{{fileLink[3]}}"
                       | {{fileLink[3]}}
+                      =image_tag "uploaded.png", :class => "check-btn"
+                  div#wrong4 ng-show="fileLink[3] == ''"
                     = image_tag "notuploaded.png", :class => "x-btn"
                 li
                   label.custom-file-upload for="file-upload5"
                     | upload
                   input#file-upload5 onchange="angular.element(this).scope().setFile(this)" type="file" /
-                  div#wrong5.wrong ng-show="fileLink[4] == ''"
-                    a.fileuploaded href="http://localhost:8180/forms/{{fileLink[4]}}"
+                  div#wrong4 ng-show="fileLink[4] !== ''"
+                    a href="https://playtest-api.herokuapp.com/forms/{{fileLink[4]}}"
                       | {{fileLink[4]}}
+                      =image_tag "uploaded.png", :class => "check-btn"
+                  div#wrong4 ng-show="fileLink[4] == ''"
                     = image_tag "notuploaded.png", :class => "x-btn"
           .row
             h3
@@ -86,7 +94,7 @@
             .col-sm-6
               ul.reqs
                 li
-                  a
+                  a href="https://playtest-api.herokuapp.com/forms/AteneodeManila/FinancialAidForm.pdf"
                     | Application Form
                 li
                   a
