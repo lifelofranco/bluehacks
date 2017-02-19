@@ -1,5 +1,5 @@
-app.controller('ScholarshipsController', ['$scope', '$stateParams', 'ScholarshipService',
-  function($scope, $stateParams, ScholarshipService) {
+app.controller('ScholarshipsController', ['$scope', '$stateParams', 'ScholarshipService', '$state',
+  function($scope, $stateParams, ScholarshipService, $state) {
     $scope.hello = "Hello";
     $scope.pdf_source = "";
 
@@ -42,6 +42,7 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
       .then(function(data) {
         // $scope.scholar = data;
         console.log(data);
+        $state.go('sidebar.subnavbar.dashboard')
       })
     }
 
@@ -52,13 +53,38 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
       $scope.topic_filters = [
       {"label": "All Locations",
        "value": "all"},
-      {"label": "Southeast Asia",
-       "value": "southeast-asia"},
+      {"label": "Japan",
+       "value": "Japan"},
+      {"label": "Thailand",
+       "value": "Thailand"},
       {"label": "United States",
-       "value": "united-states"},
-      {"label": "Europe",
-      "value": "europe"}
+      "value": "United States"},
+      {"label": "Philippines",
+      "value": "Philippines"}
     ]
+
+    $scope.topicFilter = function(country) {
+    filtered_cards = []
+    console.log(all_cards)
+    _.each(all_cards, function(e, i, l) {
+      ifFound = _.contains(e.country, country);
+      if(ifFound) {
+        filtered_cards.push(e);
+      }
+      else if(country == 'all') {
+        filtered_cards = all_cards
+      }
+    });
+    $scope.scholarships = filtered_cards
+  }
+
+  ScholarshipService.getScholarships()
+  .then(function(data) {
+    $scope.scholarships = data;
+    all_cards = data;
+    console.log($scope.scholarships);
+
+  })
 
   $scope.setFile = function(element) {
     console.log(element.id);
