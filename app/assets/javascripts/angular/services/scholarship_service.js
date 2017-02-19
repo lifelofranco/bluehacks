@@ -26,7 +26,22 @@ app.service('ScholarshipService', ["$q", "$http",
 
     return d.promise;
   }
-  
+
+  this.applyScholarship = function(data) {
+
+    $http.defaults.headers.post["Content-Type"] = "application/json";
+    var d = $q.defer();
+
+    $http({
+      method: 'POST',
+      url: 'https://playtest-api.herokuapp.com/api/v1/application/create',
+      data: data
+    }).success(function(data){
+      d.resolve(data);
+    });
+
+    return d.promise;
+  }
 
 
 }]);

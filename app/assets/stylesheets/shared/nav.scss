@@ -4,9 +4,10 @@
 .nav {
   height: 8%;
   padding-top: 13px;
-  //@include background(linear-gradient(#333333, rgba(255,255,255,0)) left repeat);
+  @include background(linear-gradient(#333333, rgba(255,255,255,0)) left repeat);
   position:fixed;
   width:100%;
+  z-index:2;
 }
 
 .logo {

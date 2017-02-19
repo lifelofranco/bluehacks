@@ -1,5 +1,5 @@
-app.controller('DashboardController', ['$scope', 'DemoService', 'ScholarshipService', '$state',
-  function($scope, DemoService, ScholarshipService, $state) {
+app.controller('DashboardController', ['$scope', 'DemoService', 'ScholarshipService', '$state', 'AuthService',
+  function($scope, DemoService, ScholarshipService, $state, AuthService) {
     this.showNav = false;
 
 
@@ -10,6 +10,13 @@ app.controller('DashboardController', ['$scope', 'DemoService', 'ScholarshipServ
     }
     $scope.tab = $state.current.name;
 
+
+
+    AuthService.updateUser($scope.user._id)
+    .then(function (d) {
+      console.log(d);
+      $scope.myScholarships = d;
+    })
 
 
     $scope.apply = function() {

@@ -9,6 +9,7 @@
 //= require angular-rails-templates
 //= require angular-cookies.min
 
+//= require lodash
 
 //= require angular-ui-router
 //= require angular/app

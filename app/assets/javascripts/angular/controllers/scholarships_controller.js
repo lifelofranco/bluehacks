@@ -1,5 +1,5 @@
-app.controller('ScholarshipsController', ['$scope', '$stateParams', 'ScholarshipService',
-  function($scope, $stateParams, ScholarshipService) {
+app.controller('ScholarshipsController', ['$scope', '$stateParams', 'ScholarshipService', '$state',
+  function($scope, $stateParams, ScholarshipService, $state) {
     $scope.hello = "Hello";
     $scope.pdf_source = "";
 
@@ -56,6 +56,25 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
       this.topics = !this.topics;
     };
 
+    ScholarshipService.getOne($stateParams.id)
+    .then(function(data) {
+      $scope.scholar = data;
+      console.log(data);
+    })
+
+    $scope.apply = function() {
+      var data = {
+        userId: $scope.user._id,
+        scholarshipId: $stateParams.id
+      }
+      ScholarshipService.applyScholarship(data)
+      .then(function(data) {
+        // $scope.scholar = data;
+        console.log(data);
+        $state.go('sidebar.subnavbar.dashboard')
+      })
+    }
+
     $scope.toggle = function() {
       this.showNav= !this.showNav;
     }
@@ -63,15 +82,38 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
       $scope.topic_filters = [
       {"label": "All Locations",
        "value": "all"},
-      {"label": "Manila",
-       "value": "manila"},
-      {"label": "Cebu",
-       "value": "cebu"},
-      {"label": "Davao",
-      "value": "marketing"},
-      {"label": "Zamboanga",
-       "value": "zamboanga"}
+      {"label": "Japan",
+       "value": "Japan"},
+      {"label": "Thailand",
+       "value": "Thailand"},
+      {"label": "United States",
+      "value": "United States"},
+      {"label": "Philippines",
+      "value": "Philippines"}
     ]
+
+    $scope.topicFilter = function(country) {
+    filtered_cards = []
+    console.log(all_cards)
+    _.each(all_cards, function(e, i, l) {
+      ifFound = _.contains(e.country, country);
+      if(ifFound) {
+        filtered_cards.push(e);
+      }
+      else if(country == 'all') {
+        filtered_cards = all_cards
+      }
+    });
+    $scope.scholarships = filtered_cards
+  }
+
+  ScholarshipService.getScholarships()
+  .then(function(data) {
+    $scope.scholarships = data;
+    all_cards = data;
+    console.log($scope.scholarships);
+
+  })
 
   $scope.setFile = function(element) {
     console.log(element.id);

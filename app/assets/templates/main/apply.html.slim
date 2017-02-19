@@ -42,8 +42,9 @@
                   label.custom-file-upload for="file-upload1" 
                     | upload
                   input#file-upload1 onchange="angular.element(this).scope().setFile(this)" type="file" /
-                  div#wrong1 ng-show="fileLink[0] == ''"
+                  div#wrong1.wrong ng-show="fileLink[0] == ''"
                     =image_tag "notuploaded.png", :class => "x-btn" 
+<<<<<<< HEAD
                   div#wrong1 ng-show="fileLink[0] !== ''"                  
                     a href="https://playtest-api.herokuapp.com/forms/{{fileLink[0]}}"
                       | {{fileLink[0]}}
@@ -52,6 +53,7 @@
                   label.custom-file-upload for="file-upload2" 
                     | upload
                   input#file-upload2 onchange="angular.element(this).scope().setFile(this)" type="file" /
+<<<<<<< HEAD
                   div#wrong2 ng-show="fileLink[1] == ''"
                     a href="https://playtest-api.herokuapp.com/forms/{{fileLink[1]}}"
                       | {{fileLink[1]}}
@@ -60,6 +62,7 @@
                   label.custom-file-upload for="file-upload3" 
                     | upload
                   input#file-upload3 onchange="angular.element(this).scope().setFile(this)" type="file" /
+<<<<<<< HEAD
                   div#wrong3 ng-show="fileLink[2] == ''"
                     a href="https://playtest-api.herokuapp.com/forms/{{fileLink[2]}}"
                       | {{fileLink[2]}}
@@ -68,6 +71,7 @@
                   label.custom-file-upload for="file-upload4" 
                     | upload
                   input#file-upload4 onchange="angular.element(this).scope().setFile(this)" type="file" /
+<<<<<<< HEAD
                   div#wrong4 ng-show="fileLink[3] == ''"
                     a href="https://playtest-api.herokuapp.com/forms/{{fileLink[3]}}"
                       | {{fileLink[3]}}
@@ -76,6 +80,7 @@
                   label.custom-file-upload for="file-upload5" 
                     | upload
                   input#file-upload5 onchange="angular.element(this).scope().setFile(this)" type="file" /
+<<<<<<< HEAD
                   div#wrong5 ng-show="fileLink[4] == ''"
                     a href="https://playtest-api.herokuapp.com/forms/{{fileLink[4]}}"
                       | {{fileLink[4]}}
@@ -102,5 +107,5 @@
             .col-sm-10.applyButton
               button
                 | Save and Exit
-              button
+              button ng-click="apply()"
                 | Apply
