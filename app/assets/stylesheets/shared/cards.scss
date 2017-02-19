@@ -124,7 +124,7 @@
   }
 
   .event {
-    @include box-shadow(0 1px 5px -2px rgba(0,0,0,0.52));
+    @include box-shadow(0 1px 4px 0 #4862A3);
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 4px;
@@ -150,6 +150,8 @@
     float: left;
     width: 100%;
     border-bottom: 1px solid #EFF2F5;
+    background: #f7f7f7;
+
   }
   .ellipsis {
     white-space: nowrap;

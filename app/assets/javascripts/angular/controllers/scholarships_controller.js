@@ -12,6 +12,18 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
       console.log(data);
     })
 
+    $scope.apply = function() {
+      var data = {
+        userId: $scope.user._id,
+        scholarshipId: $stateParams.id
+      }
+      ScholarshipService.applyScholarship(data)
+      .then(function(data) {
+        // $scope.scholar = data;
+        console.log(data);
+      })
+    }
+
     $scope.toggle = function() {
       this.showNav= !this.showNav;
     }
@@ -19,14 +31,12 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
       $scope.topic_filters = [
       {"label": "All Locations",
        "value": "all"},
-      {"label": "Manila",
-       "value": "manila"},
-      {"label": "Cebu",
-       "value": "cebu"},
-      {"label": "Davao",
-      "value": "marketing"},
-      {"label": "Zamboanga",
-       "value": "zamboanga"}
+      {"label": "Southeast Asia",
+       "value": "southeast-asia"},
+      {"label": "United States",
+       "value": "united-states"},
+      {"label": "Europe",
+      "value": "europe"}
     ]
   }
 
