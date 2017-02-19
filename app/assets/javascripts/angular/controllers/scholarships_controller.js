@@ -6,10 +6,22 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
     $scope.fileLink = ["", "", "", "", ""];
 
     $scope.isUploaded = [false, false, false, false, false];
+    //for each, check if file exists
 
-    $scope.institution = "Ateneo de Manila".replace(/\s+/g, '');
-    $scope.scholarship = "Financial Aid".replace(/\s+/g, '');
-    $scope.id = "122888";
+    $scope.id = $scope.user._id;
+
+    ScholarshipService.getOne($stateParams.id)
+    .then(function(data) {
+      $scope.scholar = data;
+      $scope.institution = data.institution;
+      $scope.scholarship = data.name.replace(/\s+/g, '');
+      $scope.institution = $scope.institution.replace(/\s+/g, '');
+      console.log($scope.institution);
+    })
+
+
+
+    //this is pretty null
     $scope.title = "Application Form";
     $scope.title = $scope.title.replace(/\s+/g, '') + ".pdf";
 
@@ -19,7 +31,7 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
     //get the ID
     //get the title - userID + strip spaces + .PDF
     ///forms/institution/scholarship/ID
-    //"http://localhost:8180/forms/" +
+    //"https://playtest-api.herokuapp.com/forms/" +
 
     this.showNav = false;
     $scope.$parent.title = 'Search Scholarships';
@@ -94,22 +106,40 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
       switch(element.id) {
         case 'file-upload1':
            i = 0;
+           $scope.title = "ApplicationForm.pdf";
            break;
         case 'file-upload2':
           i = 0;
+          $scope.title = "PersonalEssay.pdf";
           break;
         case 'file-upload3':
           i = 0;
+          $scope.title = "AcknowledgmentSlip.pdf";
           break;
         case 'file-upload4':
           i = 0;
+          $scope.title = "1x1Picture.jpg";
           break;
         case 'file-upload5':
           i = 0;
+          $scope.title = "ScholarshipForm.pdf";
           break;
       }
-      $scope.fileLink[i] = $scope.institution + "/" +
-        $scope.scholarship + "/" + $scope.id + "/" + $scope.title;
+      ScholarshipService.getOne($stateParams.id)
+      .then(function(data) {
+        $scope.scholar = data;
+        console.log(data);
+
+        $scope.scholar = data;
+        $scope.institution = data.institution;
+        $scope.scholarship = data.name.replace(/\s+/g, '');
+        $scope.institution = $scope.institution.replace(/\s+/g, '');
+        console.log($scope.institution);
+
+        $scope.fileLink[i] = $scope.institution + "/" +
+          $scope.scholarship + "/" + $scope.id + "/" + $scope.title;
+      })
+
 
       var reader = new FileReader();
 
@@ -128,7 +158,7 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
 
           $.ajax({
               type: "POST",
-              url: "http://localhost:8180/api/v1/forms/upload",
+              url: "https://playtest-api.herokuapp.com/api/v1/forms/upload",
               data: pdfObject,
               success: function(data) {
                   console.log("Doc sent successfully");
@@ -166,7 +196,8 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
 
     $.ajax({
         type: "POST",
-        url: "http://localhost:8180/api/v1/forms/upload",
+//        url: "https://playtest-api.herokuapp.com/api/v1/forms/upload",
+        url: "https://playtest-api.herokuapp.com/api/v1/forms/upload",
         data: pdfObject,
         success: function(data) {
             console.log("Photo sent successfully");
