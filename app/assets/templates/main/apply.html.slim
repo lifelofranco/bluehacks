@@ -38,18 +38,18 @@
                     | Scholarship Form
             .col-sm-2
               ul.reqs.upload
-                li.uploadContainer 
-                  label.custom-file-upload for="file-upload1" 
+                li.uploadContainer
+                  label.custom-file-upload for="file-upload1"
                     | upload
                   input#file-upload1 onchange="angular.element(this).scope().setFile(this)" type="file" /
                   div#wrong1.wrong ng-show="fileLink[0] == ''"
-                    =image_tag "notuploaded.png", :class => "x-btn" 
+                    =image_tag "notuploaded.png", :class => "x-btn"
                   div#wrong1.wrong ng-show="fileLink[0] !== ''"
                     a.fileuploaded href="http://localhost:8180/forms/{{fileLink[0]}}"
                       | {{fileLink[0]}}
-                    =image_tag "uploaded.png", :class => "check-btn" 
-                li 
-                  label.custom-file-upload for="file-upload2" 
+                    =image_tag "uploaded.png", :class => "check-btn"
+                li
+                  label.custom-file-upload for="file-upload2"
                     | upload
                   input#file-upload2 onchange="angular.element(this).scope().setFile(this)" type="file" /
                   div#wrong2.wrong ng-show="fileLink[1] == ''"
@@ -57,7 +57,7 @@
                       | {{fileLink[1]}}
                     = image_tag "notuploaded.png", :class => "x-btn"
                 li
-                  label.custom-file-upload for="file-upload3" 
+                  label.custom-file-upload for="file-upload3"
                     | upload
                   input#file-upload3 onchange="angular.element(this).scope().setFile(this)" type="file" /
                   div#wrong3.wrong ng-show="fileLink[2] == ''"
@@ -65,7 +65,7 @@
                       | {{fileLink[2]}}
                     = image_tag "notuploaded.png", :class => "x-btn"
                 li
-                  label.custom-file-upload for="file-upload4" 
+                  label.custom-file-upload for="file-upload4"
                     | upload
                   input#file-upload4 onchange="angular.element(this).scope().setFile(this)" type="file" /
                   div#wrong4.wrong ng-show="fileLink[3] == ''"
@@ -73,7 +73,7 @@
                       | {{fileLink[3]}}
                     = image_tag "notuploaded.png", :class => "x-btn"
                 li
-                  label.custom-file-upload for="file-upload5" 
+                  label.custom-file-upload for="file-upload5"
                     | upload
                   input#file-upload5 onchange="angular.element(this).scope().setFile(this)" type="file" /
                   div#wrong5.wrong ng-show="fileLink[4] == ''"
@@ -102,5 +102,5 @@
             .col-sm-10.applyButton
               button
                 | Save and Exit
-              button ng-click="apply()"
-                | Apply
+              button ng-click="apply()" ng-disabled="checkDisable"
+                | {{process}}

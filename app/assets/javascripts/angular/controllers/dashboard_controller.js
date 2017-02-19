@@ -1,5 +1,5 @@
-app.controller('DashboardController', ['$scope', 'DemoService', 'ScholarshipService', '$state', 'AuthService',
-  function($scope, DemoService, ScholarshipService, $state, AuthService) {
+app.controller('DashboardController', ['$scope', 'DemoService', 'ScholarshipService', '$state', 'AuthService', '$cookies', '$window',
+  function($scope, DemoService, ScholarshipService, $state, AuthService, $cookies, $window) {
     this.showNav = false;
 
 
@@ -10,6 +10,11 @@ app.controller('DashboardController', ['$scope', 'DemoService', 'ScholarshipServ
     }
     $scope.tab = $state.current.name;
 
+
+    $scope.logout = function() {
+        $cookies.remove("token");
+        $window.location.href="/";
+    };
 
 
     AuthService.updateUser($scope.user._id)

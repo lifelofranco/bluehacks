@@ -1,7 +1,9 @@
-app.controller('ScholarshipsController', ['$scope', '$stateParams', 'ScholarshipService', '$state',
-  function($scope, $stateParams, ScholarshipService, $state) {
+app.controller('ScholarshipsController', ['$scope', '$stateParams', 'ScholarshipService', '$state', 'AuthService',
+  function($scope, $stateParams, ScholarshipService, $state, AuthService) {
     $scope.hello = "Hello";
     $scope.pdf_source = "";
+
+    $scope.process = "Apply";
 
     $scope.fileLink = ["", "", "", "", ""];
 
@@ -31,7 +33,34 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
     .then(function(data) {
       $scope.scholar = data;
       console.log(data);
+
+      AuthService.updateUser($scope.user._id)
+      .then(function (d) {
+        console.log(d);
+        _.each(d.applications, function (a) {
+          console.log(a);
+          if (a.scholarship.scholarshipId === $scope.scholar._id) {
+            $scope.process = a.status;
+          }
+          if ($scope.process == 'Pending') {
+            console.log($scope.process)
+            $scope.checkDisable = true;
+          }
+        })
+      })
+
+
+
     })
+
+    // ScholarshipService.getApplications($scope.user_id)
+    // .then(function(data) {
+    //   $scope.scholar = data;
+    //   console.log(data);
+    //
+    // })
+
+
 
     $scope.apply = function() {
       var data = {

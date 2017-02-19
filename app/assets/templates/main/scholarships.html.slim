@@ -28,5 +28,5 @@
                 p.desc
                   | {{card.description}}
                 p
-                button.apply ui-sref=".sidebar.subnavbar.apply"
-                  |  Apply
+                button.apply ui-sref=".sidebar.subnavbar.apply" ng-disabled="checkDisable()"
+                  |  {{process}}

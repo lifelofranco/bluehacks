@@ -1,5 +1,5 @@
 app.controller('SubNavbarController',
-  function($scope, $state, DemoService, ScholarshipService) {
+  function($scope, $state, DemoService, ScholarshipService, $cookies, $window) {
 
 
         ScholarshipService.getScholarships()
@@ -8,6 +8,9 @@ app.controller('SubNavbarController',
           console.log($scope.scholarships);
 
         })
+
+
+
     //$scope.scholarships = DemoService.scholarships();
 
       $scope.tab = $state.current.name;
@@ -26,5 +29,11 @@ app.controller('SubNavbarController',
                                   ]
           }
       });
+
+      // 
+      // $scope.logout = function() {
+      //     $cookies.remove("token");
+      //     $window.location.href="/";
+      // };
 
 });
