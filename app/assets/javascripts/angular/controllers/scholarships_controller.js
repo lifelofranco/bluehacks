@@ -17,23 +17,6 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
       $scope.scholarship = data.name.replace(/\s+/g, '');
       $scope.institution = $scope.institution.replace(/\s+/g, '');
       console.log($scope.institution);
-
-      $scope.tempFileName = $scope.institution + "/" +
-        $scope.scholarship + "/" + $scope.id + "/";
-      $scope.tempNames = [$scope.tempFileName.concat("ApplicationForm.pdf"),
-    $scope.tempFileName.concat("PersonalEssay.pdf"), $scope.tempFileName.concat("AcknowledgmentSlip.pdf"),
-  $scope.tempFileName.concat("1x1Picture.jpg"), $scope.tempFileName.concat("Scholarship.pdf")];
-
-      for (var x = 0; x < $scope.tempNames.length; x++) {
-        var name = "http://localhost:8081/forms/" + $scope.tempNames[x];
-        $.get(name).done(function() {
-          fileLink[x] = name;
-          console.log(fileLink[x]);
-          console.log("Found!!!");
-        }).fail(function() {
-          console.log("Can't find");
-        })
-      }
     })
 
 
@@ -142,8 +125,21 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
           $scope.title = "ScholarshipForm.pdf";
           break;
       }
-      $scope.fileLink[i] = $scope.institution + "/" +
-        $scope.scholarship + "/" + $scope.id + "/" + $scope.title;
+      ScholarshipService.getOne($stateParams.id)
+      .then(function(data) {
+        $scope.scholar = data;
+        console.log(data);
+
+        $scope.scholar = data;
+        $scope.institution = data.institution;
+        $scope.scholarship = data.name.replace(/\s+/g, '');
+        $scope.institution = $scope.institution.replace(/\s+/g, '');
+        console.log($scope.institution);
+
+        $scope.fileLink[i] = $scope.institution + "/" +
+          $scope.scholarship + "/" + $scope.id + "/" + $scope.title;
+      })
+
 
       var reader = new FileReader();
 
@@ -162,7 +158,6 @@ app.controller('ScholarshipsController', ['$scope', '$stateParams', 'Scholarship
 
           $.ajax({
               type: "POST",
-              //url: "https://playtest-api.herokuapp.com/api/v1/forms/upload",
               url: "https://playtest-api.herokuapp.com/api/v1/forms/upload",
               data: pdfObject,
               success: function(data) {
