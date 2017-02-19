@@ -41,6 +41,7 @@ app.service('AuthService', ["$rootScope", "$q", "$http", "$window", "$cookies", 
         $cookies.put('token', data.token);
 
         $window.location.reload();
+        $state.go('sidebar.subnavbar.dashboard');
       });
 
   };
