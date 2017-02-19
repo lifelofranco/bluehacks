@@ -48,7 +48,16 @@ app.config(
       views: {
         'subcontent': {
           templateUrl: 'main/apply.html',
-          controller: 'ApplyController'
+          controller: 'ScholarshipsController'
+        }
+      }
+    })
+    .state('sidebar.subnavbar.show', {
+      url: '/apply/:id',
+      views: {
+        'subcontent': {
+          templateUrl: 'main/apply.html',
+          controller: 'ScholarshipsController'
         }
       }
     })

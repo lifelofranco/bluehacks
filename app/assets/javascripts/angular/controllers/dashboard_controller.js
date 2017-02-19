@@ -1,6 +1,7 @@
-app.controller('DashboardController', ['$scope', 'DemoService', '$state',
-  function($scope, DemoService, $state) {
+app.controller('DashboardController', ['$scope', 'DemoService', 'ScholarshipService', '$state',
+  function($scope, DemoService, ScholarshipService, $state) {
     this.showNav = false;
+
 
     $scope.$parent.title = 'Applied Scholarships';
 

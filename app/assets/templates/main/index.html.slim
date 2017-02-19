@@ -1,74 +1,74 @@
 section.background#index
   div ng-include="'shared/nav.html'"
 
-  .container.tagline.home
+  .container.tagline.home.center
     h1
-      | Find a
-      |  scholarship
-      |  right for you
+      | Find the
+      |  right scholarship
+      |  for you
     h3
       | We believe everyone has the right to high quality education.
 
 
-section.bg-gray#featured_classes_section
-  .container
-    .row
-        h2 Featured Classes
-        .featured_classes.row
-          .featured_class_container.col-md-3.col-sm-4 ng-repeat="featuredClass in featuredClasses"
-            .featured_class
-              img.class_img ng-src="{{featuredClass.image}}"
-              .class_details
-                p.class_title.ellipsis
-                  | {{featuredClass.title}}
+/ section.bg-gray#featured_classes_section
+/   .container
+/     .row
+/         h2 Featured Classes
+/         .featured_classes.row
+/           .featured_class_container.col-md-3.col-sm-4 ng-repeat="featuredClass in featuredClasses"
+/             .featured_class
+/               img.class_img ng-src="{{featuredClass.image}}"
+/               .class_details
+/                 p.class_title.ellipsis
+/                   | {{featuredClass.title}}
 
-section.mentees#mentees
-  .container
-    .row
-      .col-md-6.padding
-        h2 For Mentees
-        .instructions
-          .steps
-            h2 1
-            p
-              | Search your desired topic and browse through a wide array of mentors/classes.
-          .steps
-            h2 2
-            p.row-space-top-4
-              | Message your mentor regarding your specific needs
-          .steps
-            h2 3
-            p.book
-              | Book your chosen mentor or class.
-      .col-md-5.col-md-offset-1.center.row-space-top-6
-        = image_tag "student.png", :class => "mentee"
+/ section.mentees#mentees
+/   .container
+/     .row
+/       .col-md-6.padding
+/         h2 This is a Platform for Students
+/         .instructions
+/           .steps
+/             h2 1
+/             p
+/               | Search for your desired scholarship and apply. 
+/           .steps
+/             h2 2
+/             p.row-space-top-4
+/               | Keep track of your scholarship requirements.
+/           .steps
+/             h2 3
+/             p.book
+/               | Monitor your application status.
+/       .col-md-5.col-md-offset-1.center.row-space-top-6
+/         = image_tag "student.png", :class => "mentee"
 
-section.testimonials
-  .container
-    .row
-      .col-md-3
-
-    h1 hello
-    ul.image rn-carousel="" rn-carousel-auto-slide=""
-      li slide #1
-      li slide #2
-      li slide #3
+/ section.testimonials
+/   .container
+/     .row
+/       .col-md-3
+/ 
+/     h1 Testimonials
+/     ul.image rn-carousel="" rn-carousel-auto-slide=""
+/       li slide #1
+/       li slide #2
+/       li slide #3
 
 
 section.bg-gray#what
   .container
     .features.col-md-4.col-sm-12
-      =image_tag "star.png"
-      h3 Indulge your curiosity
-      p Browse through a wide variety of classes, from code to design to marketing
+      =image_tag "gradcap.png"
+      h3 Scholarships at your fingertips
+      p We make it easy for you to search and apply for your desired scholarship.
     .features.col-md-4.col-sm-12
-      =image_tag "users.png"
-      h3 Learn from great mentors
-      p Be guided and get personalized feedback at every stage of your learning
+      =image_tag "pencil.png"
+      h3 Keep Up With Requirements
+      p Stay organized by using our convenient requirement tracker. 
     .features.col-md-4.col-sm-12
-      =image_tag "customizable.png"
-      h3 Get better at what you love
-      p Embark on the road to mastery from the convenience of your computer
+      =image_tag "imac.png"
+      h3 Monitor Your Application
+      p Our web app allows you to keep track of your application status so you know never have to panic!
 
 section#footer.bg-orange
   .container
@@ -80,10 +80,10 @@ section#footer.bg-orange
         ul
           li
             i.fa.fa-envelope-o aria-hidden="true"
-            | lrnrightnow@gmail.com
+            | academe@gmail.com
           li
             i.fa.fa-facebook-square aria-hidden="true"
-            | facebook.com/lrnrightnow
+            | facebook.com/academe
           li
             i.fa.fa-phone aria-hidden="true"
             | +63 915 458 7029
