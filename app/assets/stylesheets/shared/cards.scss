@@ -78,14 +78,15 @@
 
   .x-btn {
     position: relative;
-    left: 45px;
-    bottom: 26px;
+      left: 60px;
+      bottom: 31px;
+      width: 18px;
   }
 
   .check-btn {
     position: relative;
-    left: 45px;
-    bottom: 26px;
+    left: 57px;
+    bottom: 30px;
   }
 
   .fileuploaded{
@@ -319,7 +320,7 @@ input[type="file"] {
 }
 
 .custom-file-upload {
-    font-size: 8px;
+    font-size: 14px;
     //border: 1px solid #ccc;
     display: inline-block;
     padding: 2px 2px;

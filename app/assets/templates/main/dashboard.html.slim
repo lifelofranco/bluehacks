@@ -1,6 +1,6 @@
 .container.add-margin-x
   .card ng-repeat="card in myScholarships.applications | filter: {title: name}"
-    a ui-sref="sidebar.subnavbar.show({id: card._id})"
+    a ui-sref="sidebar.subnavbar.show({id: card.scholarship.scholarshipId})"
       .event.b
         .image
           img.event-img ng-src="{{card.scholarship.logo}}"
